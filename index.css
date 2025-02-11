@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    background-color: grey;
+    overflow: hidden;
+}
+
+.layer {
+    backdrop-filter: blur(10px);
+    position: relative;
+    
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.layer-container {
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    z-index: 9999;
+}
+
+.layer-container h1 {
+    text-align: center;
+    font-size: 5rem;
+
+    text-shadow: 3px 3px black;
+}
+
+.layer-container .title {
+    font-size: 8rem;
+    line-height: 1.5em;
+}
+
+button {
+    font-size: 2rem;
+    padding: .5em;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    background-color: black;
+    box-shadow: 2px 2px white;
+    cursor: pointer;
+
+    transition: box-shadow .5s;
+}
+
+button:hover {
+    box-shadow: 5px 5px white;
+}
+
+button.hidden {
+    display: none;
+}
+
+.container {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gambar {
+    height: 250px;
+    width: 250px;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.player-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.player-container .player {
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.player-animasi {
+    animation: animasiPlayer 1s alternate infinite;
+}
+
+.player-animasi:hover {
+    animation: none;
+}
+
+.status-animasi {
+    z-index: 2;
+    animation: animasiStatus 1s ease-out forwards;
+}
+
+@keyframes animasiStatus {
+    0% {
+        transform: scale(200%);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: scale(100%);
+        opacity: 1;
+    }
+}
+
+@keyframes animasiPlayer {
+    from {
+        transform: rotate(180deg) translateY(0);
+    }
+    
+    to {
+        transform: rotate(180deg) translateY(10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .layer-container h1 {
+        font-size: 3rem;
+    }
+
+    .layer-container .title {
+        font-size: 4rem;
+    }
+
+    button {
+        font-size: 1.5rem;
+    }
+
+    .gambar {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media (max-width: 430px) {
+    body {
+        overflow: auto;
+    }
+    
+    .container {
+        height: auto;
+        gap: 10px;
+    }
+
+    .thumbnail {
+        margin: 10vh auto;
+    }   
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .gambar {
+        height: 180px;
+        width: 180px;
+    }
+
+    .player-container {
+        flex-direction: column;
+    }
+
+    .layer-container h1 {
+        font-size: 3rem;
+    }
+
+    .layer-container .title {
+        font-size: 3.5rem;
+    }
+
+    button {
+        font-size: 1.5rem;
+    }
+}
