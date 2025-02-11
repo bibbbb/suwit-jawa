@@ -8,7 +8,7 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
     background-color: grey;
-    overflow: hidden;
+    overflow: auto
 }
 
 .layer {
@@ -77,12 +77,12 @@ button.hidden {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: .5vh;
 }
 
 .gambar {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
 }
 
 .title {
