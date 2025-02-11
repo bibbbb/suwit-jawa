@@ -15,7 +15,7 @@ let randomPilihanEnemy = () => {
         let enemy = document.querySelector(".enemy");
         enemy.setAttribute('src', `img/${img[counter]}.png`);
         counter++;
-    }, 500)
+    }, 100)
 }
 
 let stopPilihanEnemy = () => {
